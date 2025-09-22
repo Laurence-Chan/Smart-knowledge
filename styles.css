@@ -1,0 +1,638 @@
+/* Smart Knowledge Design System Styles */
+
+/* Tang Dynasty Color Scheme - Ensure compatibility within plugin containers */
+:root,
+.smart-knowledge-settings,
+.sk-recommendation-view,
+.sk-chat-container,
+.view-content {
+  /* Primary Colors */
+  --sk-primary: #436C85;
+  --sk-primary-light: #5a8aa8;
+  --sk-primary-dark: #2d4a5e;
+  --sk-primary-alpha: rgba(67, 108, 133, 0.1);
+
+  /* Accent Colors */
+  --sk-accent: #B73F42;
+  --sk-accent-light: #d65a5d;
+  --sk-accent-dark: #8b2e31;
+  --sk-accent-alpha: rgba(183, 63, 66, 0.1);
+
+  /* Secondary Colors */
+  --sk-secondary: #DE9960;
+  --sk-secondary-light: #e8b180;
+  --sk-secondary-dark: #c17d3d;
+  --sk-secondary-alpha: rgba(222, 153, 96, 0.1);
+
+  /* Success Colors */
+  --sk-success: #82B29B;
+  --sk-success-light: #9cc4b1;
+  --sk-success-dark: #6a9582;
+  --sk-success-alpha: rgba(130, 178, 155, 0.1);
+
+  /* Neutral Colors */
+  --sk-neutral: #EEE8CB;
+  --sk-neutral-light: #f7f4e6;
+  --sk-neutral-dark: #d9d1a8;
+  --sk-neutral-alpha: rgba(238, 232, 203, 0.1);
+
+  /* Text Colors */
+  --sk-text-primary: #2d2d2d;
+  --sk-text-secondary: #5a5a5a;
+  --sk-text-muted: #8a8a8a;
+  --sk-text-disabled: #c0c0c0;
+  --sk-text-inverse: #ffffff;
+
+  /* Background Colors */
+  --sk-bg-primary: #ffffff;
+  --sk-bg-secondary: #f8f9fa;
+  --sk-bg-tertiary: #f0f2f5;
+  --sk-bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Border Colors */
+  --sk-border-light: #e8eaed;
+  --sk-border-medium: #d1d5db;
+  --sk-border-strong: #9ca3af;
+
+  /* Status Colors */
+  --sk-warning: #f59e0b;
+  --sk-error: #ef4444;
+  --sk-info: #3b82f6;
+
+  /* Font Hierarchy */
+  --sk-font-h1: 24px;
+  --sk-font-h2: 20px;
+  --sk-font-h3: 18px;
+  --sk-font-h4: 16px;
+  --sk-font-body-lg: 16px;
+  --sk-font-body: 14px;
+  --sk-font-body-sm: 12px;
+  --sk-font-caption: 11px;
+  --sk-font-label: 13px;
+
+  /* Font Weights */
+  --sk-font-weight-light: 300;
+  --sk-font-weight-normal: 400;
+  --sk-font-weight-medium: 500;
+  --sk-font-weight-semibold: 600;
+  --sk-font-weight-bold: 700;
+
+  /* Line Heights */
+  --sk-line-height-tight: 1.2;
+  --sk-line-height-normal: 1.5;
+  --sk-line-height-relaxed: 1.6;
+
+  /* Spacing System */
+  --sk-space-1: 4px;
+  --sk-space-2: 8px;
+  --sk-space-3: 12px;
+  --sk-space-4: 16px;
+  --sk-space-5: 20px;
+  --sk-space-6: 24px;
+  --sk-space-8: 32px;
+  --sk-space-10: 40px;
+  --sk-space-12: 48px;
+  --sk-space-16: 64px;
+  --sk-space-20: 80px;
+
+  /* Border Radius Specification */
+  --sk-radius-sm: 4px;
+  --sk-radius-md: 6px;
+  --sk-radius-lg: 8px;
+  --sk-radius-xl: 12px;
+  --sk-radius-2xl: 16px;
+  --sk-radius-full: 9999px;
+
+  /* Shadow Levels */
+  --sk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --sk-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --sk-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --sk-shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --sk-shadow-primary: 0 4px 12px var(--sk-primary-alpha);
+  --sk-shadow-accent: 0 4px 12px var(--sk-accent-alpha);
+
+  /* Animations */
+  --sk-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --sk-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --sk-ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --sk-duration-fast: 0.15s;
+  --sk-duration-normal: 0.2s;
+  --sk-duration-slow: 0.3s;
+}
+
+/* Dark Mode Adaptation */
+.theme-dark,
+.theme-dark .smart-knowledge-settings,
+.theme-dark .sk-recommendation-view,
+.theme-dark .sk-chat-container,
+.theme-dark .view-content {
+  --sk-text-primary: #e5e7eb;
+  --sk-text-secondary: #9ca3af;
+  --sk-text-muted: #6b7280;
+  --sk-bg-primary: var(--background-primary);
+  --sk-bg-secondary: var(--background-secondary);
+  --sk-bg-tertiary: var(--background-modifier-border);
+  --sk-border-light: #374151;
+  --sk-border-medium: #4b5563;
+  --sk-border-strong: #6b7280;
+}
+
+/* Button Components */
+.sk-btn-primary {
+  background: var(--sk-primary);
+  color: var(--sk-text-inverse);
+  border: none;
+  border-radius: var(--sk-radius-lg);
+  padding: 10px 20px;
+  font-size: var(--sk-font-body);
+  font-weight: var(--sk-font-weight-medium);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  cursor: pointer;
+}
+
+.sk-btn-primary:hover {
+  background: var(--sk-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--sk-shadow-primary);
+}
+
+.sk-btn-secondary {
+  background: transparent;
+  color: var(--sk-primary);
+  border: 1px solid var(--sk-primary);
+  border-radius: var(--sk-radius-lg);
+  padding: 10px 20px;
+  font-size: var(--sk-font-body);
+  font-weight: var(--sk-font-weight-medium);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  cursor: pointer;
+}
+
+.sk-btn-secondary:hover {
+  background: var(--sk-primary-alpha);
+  border-color: var(--sk-primary-dark);
+}
+
+.sk-btn-warning {
+  background: var(--sk-accent);
+  color: var(--sk-text-inverse);
+  border: none;
+  border-radius: var(--sk-radius-lg);
+  padding: 10px 20px;
+  font-size: var(--sk-font-body);
+  font-weight: var(--sk-font-weight-medium);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  cursor: pointer;
+}
+
+.sk-btn-warning:hover {
+  background: var(--sk-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--sk-shadow-accent);
+}
+
+/* Card Components */
+.sk-card {
+  background: var(--sk-bg-primary);
+  border: 1px solid var(--sk-border-light);
+  border-radius: var(--sk-radius-xl);
+  padding: var(--sk-space-5);
+  box-shadow: var(--sk-shadow-md);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.sk-card:hover {
+  box-shadow: var(--sk-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.sk-card-header {
+  padding-bottom: var(--sk-space-4);
+  border-bottom: 1px solid var(--sk-border-light);
+  margin-bottom: var(--sk-space-4);
+}
+
+/* Input Components */
+.sk-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--sk-border-medium);
+  border-radius: var(--sk-radius-md);
+  font-size: var(--sk-font-body);
+  background: var(--sk-bg-primary);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.sk-input:focus {
+  outline: none;
+  border-color: var(--sk-primary);
+  box-shadow: 0 0 0 3px var(--sk-primary-alpha);
+}
+
+.sk-input::placeholder {
+  color: var(--sk-text-muted);
+}
+
+/* Tag Components */
+.sk-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sk-space-1) var(--sk-space-2);
+  background: var(--sk-primary-alpha);
+  color: var(--sk-primary);
+  border-radius: var(--sk-radius-sm);
+  font-size: var(--sk-font-caption);
+  font-weight: var(--sk-font-weight-medium);
+}
+
+.sk-tag-success {
+  background: var(--sk-success-alpha);
+  color: var(--sk-success);
+}
+
+.sk-tag-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--sk-warning);
+}
+
+/* Icon Specifications */
+.sk-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--sk-text-secondary);
+  transition: color var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.sk-icon.active {
+  color: var(--sk-primary);
+}
+
+.sk-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.sk-icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Status Styles */
+.sk-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sk-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.sk-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid var(--sk-border-light);
+  border-top-color: var(--sk-primary);
+  border-radius: 50%;
+  animation: sk-spin 0.8s linear infinite;
+}
+
+/* Hover Effects */
+.sk-hover-lift {
+  transition: transform var(--sk-duration-normal) var(--sk-ease-out), box-shadow var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.sk-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sk-shadow-lg);
+}
+
+/* Animations */
+@keyframes sk-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sk-fade-in {
+  animation: sk-fade-in 0.3s ease;
+}
+
+@keyframes sk-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Recommendation Card Styles */
+.sk-recommendation-card {
+  background: var(--sk-bg-primary);
+  border: 1px solid var(--sk-border-light);
+  border-radius: var(--sk-radius-xl);
+  padding: var(--sk-space-4);
+  margin-bottom: var(--sk-space-3);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  cursor: pointer;
+}
+
+.sk-recommendation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sk-shadow-lg);
+  border-color: var(--sk-primary-light);
+}
+
+.sk-recommendation-title {
+  font-size: var(--sk-font-body-lg);
+  font-weight: var(--sk-font-weight-semibold);
+  color: var(--sk-text-primary);
+  margin-bottom: var(--sk-space-2);
+}
+
+.sk-recommendation-similarity {
+  display: inline-flex;
+  align-items: center;
+  background: var(--sk-success-alpha);
+  color: var(--sk-success);
+  padding: var(--sk-space-1) var(--sk-space-2);
+  border-radius: var(--sk-radius-sm);
+  font-size: var(--sk-font-caption);
+  font-weight: var(--sk-font-weight-medium);
+}
+
+.sk-recommendation-preview {
+  color: var(--sk-text-secondary);
+  font-size: var(--sk-font-body-sm);
+  line-height: var(--sk-line-height-normal);
+  margin-top: var(--sk-space-2);
+}
+
+/* AI Chat Styles */
+.sk-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--sk-bg-primary);
+}
+
+.sk-chat-header {
+  padding: var(--sk-space-4);
+  border-bottom: 1px solid var(--sk-border-light);
+  background: var(--sk-bg-secondary);
+}
+
+.sk-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sk-space-4);
+  background: var(--sk-bg-primary);
+}
+
+.sk-chat-message {
+  margin-bottom: var(--sk-space-4);
+  max-width: 80%;
+}
+
+.sk-chat-message.user {
+  margin-left: auto;
+  background: var(--sk-primary);
+  color: var(--sk-text-inverse);
+  border-radius: var(--sk-radius-xl) var(--sk-radius-xl) var(--sk-radius-sm) var(--sk-radius-xl);
+  padding: var(--sk-space-3) var(--sk-space-4);
+}
+
+.sk-chat-message.assistant {
+  background: var(--sk-bg-secondary);
+  color: var(--sk-text-primary);
+  border-radius: var(--sk-radius-xl) var(--sk-radius-xl) var(--sk-radius-xl) var(--sk-radius-sm);
+  padding: var(--sk-space-3) var(--sk-space-4);
+  border: 1px solid var(--sk-border-light);
+}
+
+.sk-chat-input {
+  padding: var(--sk-space-4);
+  border-top: 1px solid var(--sk-border-light);
+  background: var(--sk-bg-secondary);
+  display: flex;
+  gap: var(--sk-space-2);
+  align-items: flex-end;
+}
+
+.sk-chat-input textarea {
+  flex: 1;
+  min-height: 40px;
+  max-height: 120px;
+  resize: vertical;
+  border: 1px solid var(--sk-border-medium);
+  border-radius: var(--sk-radius-md);
+  padding: var(--sk-space-2) var(--sk-space-3);
+  background: var(--sk-bg-primary);
+  font-family: inherit;
+}
+
+.sk-chat-input textarea:focus {
+  outline: none;
+  border-color: var(--sk-primary);
+  box-shadow: 0 0 0 3px var(--sk-primary-alpha);
+}
+
+/* Context Chips */
+.sk-context-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sk-space-1);
+  padding: var(--sk-space-1) var(--sk-space-2);
+  background: var(--sk-secondary-alpha);
+  color: var(--sk-secondary-dark);
+  border-radius: var(--sk-radius-full);
+  font-size: var(--sk-font-caption);
+  font-weight: var(--sk-font-weight-medium);
+  cursor: pointer;
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.sk-context-chip:hover {
+  background: var(--sk-secondary);
+  color: var(--sk-text-inverse);
+}
+
+.sk-context-chip.active {
+  background: var(--sk-primary);
+  color: var(--sk-text-inverse);
+}
+
+/* Status Indicators */
+.sk-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sk-space-1);
+  padding: var(--sk-space-1) var(--sk-space-2);
+  border-radius: var(--sk-radius-full);
+  font-size: var(--sk-font-caption);
+  font-weight: var(--sk-font-weight-medium);
+}
+
+.sk-status-indicator.success {
+  background: var(--sk-success-alpha);
+  color: var(--sk-success-dark);
+}
+
+.sk-status-indicator.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--sk-warning);
+}
+
+.sk-status-indicator.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--sk-error);
+}
+
+/* Obsidian Plugin Specific Styles */
+.workspace-leaf-content[data-type="smart-knowledge-recommendations"] {
+  background: var(--sk-bg-primary);
+}
+
+.workspace-leaf-content[data-type="smart-knowledge-ai-chat"] {
+  background: var(--sk-bg-primary);
+}
+
+/* Settings Page Container */
+.smart-knowledge-settings {
+  background: var(--sk-bg-primary);
+  color: var(--sk-text-primary);
+}
+
+/* Force apply our color variables */
+.sk-settings-hero {
+  background: linear-gradient(135deg, #436C85 0%, #5a8aa8 100%) !important;
+  color: white !important;
+}
+
+.sk-recommendation-card {
+  background: var(--sk-bg-primary) !important;
+  border: 1px solid var(--sk-border-light) !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  margin-bottom: 12px !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.sk-recommendation-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  border-color: #5a8aa8 !important;
+}
+
+.sk-recommendation-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--text-normal) !important;
+  margin-bottom: 8px !important;
+}
+
+.sk-recommendation-similarity {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(130, 178, 155, 0.1) !important;
+  color: #82B29B !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+.sk-recommendation-preview {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  margin-top: 8px !important;
+}
+
+/* AI Chat Message Styles */
+.sk-chat-message.user {
+  margin-left: auto !important;
+  background: #436C85 !important;
+  color: white !important;
+  border-radius: 12px 12px 4px 12px !important;
+  padding: 12px 16px !important;
+  max-width: 85% !important;
+}
+
+.sk-chat-message.assistant {
+  background: var(--background-secondary) !important;
+  color: var(--text-normal) !important;
+  border-radius: 12px 12px 12px 4px !important;
+  padding: 12px 16px !important;
+  border: 1px solid var(--border-color) !important;
+  max-width: 85% !important;
+}
+
+/* Context Chip Styles */
+.sk-context-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 4px 8px !important;
+  background: rgba(222, 153, 96, 0.1) !important;
+  color: #c17d3d !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.sk-context-chip:hover {
+  background: #DE9960 !important;
+  color: white !important;
+}
+
+.sk-context-chip.active {
+  background: #436C85 !important;
+  color: white !important;
+}
+
+/* Dark mode specific fixes for recommendation view */
+.theme-dark .workspace-leaf-content[data-type="smart-knowledge-recommendations"] {
+  background: var(--background-primary) !important;
+}
+
+.theme-dark .sk-recommendation-view {
+  background: var(--background-primary) !important;
+  color: var(--text-normal) !important;
+}
+
+.theme-dark .sk-recommendation-header {
+  background: var(--background-secondary) !important;
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+}
+
+.theme-dark .sk-recommendation-card {
+  background: var(--background-secondary) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+}
+
+.theme-dark .sk-recommendation-card:hover {
+  background: var(--background-modifier-hover) !important;
+  border-color: var(--background-modifier-border-hover) !important;
+}
+
+.theme-dark .sk-recommendation-title {
+  color: var(--text-normal) !important;
+}
+
+.theme-dark .sk-recommendation-preview {
+  color: var(--text-muted) !important;
+}
+
+.theme-dark .sk-recommendation-placeholder,
+.theme-dark .sk-recommendation-empty,
+.theme-dark .sk-recommendation-warning {
+  background: var(--background-secondary) !important;
+  color: var(--text-muted) !important;
+}
