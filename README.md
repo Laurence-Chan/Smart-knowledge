@@ -17,11 +17,15 @@ Smart Knowledge is an AI-enhanced knowledge management plugin designed for Obsid
 - **Sidebar View**: Independent AI assistant panel supporting continuous conversations
 - **Context Awareness**: Automatically combines current active notes and related content to provide answers
 
+<img width="1119" height="1027" alt="截屏2025-09-23 下午9 10 23" src="https://github.com/user-attachments/assets/638e47ef-616c-4a29-93cc-495ba1da00fd" />
+
 ### 📚 Intelligent Recommendations
 - **Real-time Associations**: Automatically recommends related documents based on currently reading note content
 - **Similarity Scoring**: Shows relevance degree of recommended notes to help judge association strength
 - **Relationship Explanations**: Optional generation of recommendation reasons to understand the logic behind note associations
 - **Sidebar Integration**: Continuously displayed in right sidebar without interfering with normal note browsing
+
+<img width="1119" height="670" alt="截屏2025-09-23 下午9 05 43" src="https://github.com/user-attachments/assets/826b869e-1b94-4985-8506-06f5bc3f74b7" />
 
 ### 🎯 Multi-Model Support
 - **Flexible Configuration**: Supports mainstream AI services like OpenAI, Claude, Deepseek, Qwen, etc.
