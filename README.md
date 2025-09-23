@@ -1,172 +1,171 @@
 # Smart Knowledge
 
-**[English](./README_EN.md) | 中文**
+**English | [中文](./README.md)**
 
-Smart Knowledge 是一个为 Obsidian 设计的 AI 增强型知识管理插件，通过语义理解和智能推荐技术，让你的个人知识库变得更加智能和高效。
+Smart Knowledge is an AI-enhanced knowledge management plugin designed for Obsidian that makes your personal knowledge base smarter and more efficient through semantic understanding and intelligent recommendation technologies.
 
-## ✨ 核心功能
+## ✨ Core Features
 
-### 🔍 语义搜索
-- **自然语言检索**：不再依赖关键词匹配，支持用自然语言描述你想要找的内容
-- **向量化索引**：基于先进的嵌入模型，为所有笔记建立语义向量索引
-- **快捷访问**：通过命令面板或工具栏快速打开语义搜索弹窗
+### 🔍 Semantic Search
+- **Natural Language Retrieval**: No more relying on keyword matching - describe what you're looking for in natural language
+- **Vector Indexing**: Built on advanced embedding models to create semantic vector indexes for all your notes
+- **Quick Access**: Fast access through command palette or toolbar to open semantic search modal
 
-### 🤖 AI 智能问答
-- **RAG 问答系统**：结合检索增强生成技术，基于你的笔记内容回答问题
-- **@ 引用功能**：在对话中使用 `@笔记标题` 直接引用特定笔记
-- **侧边栏视图**：提供独立的 AI 助手面板，支持持续对话
-- **上下文感知**：自动结合当前活跃笔记和相关内容提供回答
+### 🤖 AI-Powered Q&A
+- **RAG Q&A System**: Combines Retrieval-Augmented Generation technology to answer questions based on your notes
+- **@ Mention Feature**: Use `@note-title` to directly reference specific notes in conversations
+- **Sidebar View**: Independent AI assistant panel supporting continuous conversations
+- **Context Awareness**: Automatically combines current active notes and related content to provide answers
 
-### 📚 智能推荐
-- **实时关联**：根据当前阅读的笔记内容，自动推荐相关文档
-- **相似度评分**：显示推荐笔记的相关程度，帮助你判断关联强度
-- **关系解释**：可选择生成推荐理由，了解笔记之间的关联逻辑
-- **侧边栏集成**：在右侧栏持续显示，不干扰正常的笔记浏览
+### 📚 Intelligent Recommendations
+- **Real-time Associations**: Automatically recommends related documents based on currently reading note content
+- **Similarity Scoring**: Shows relevance degree of recommended notes to help judge association strength
+- **Relationship Explanations**: Optional generation of recommendation reasons to understand the logic behind note associations
+- **Sidebar Integration**: Continuously displayed in right sidebar without interfering with normal note browsing
 
-### 🎯 多模型支持
-- **灵活配置**：支持 OpenAI、Claude、Deepseek、通义千问等主流 AI 服务
-- **代理服务**：内置常用代理服务预设，支持自定义 API 端点
-- **服务容错**：多服务自动切换，确保功能稳定性
+### 🎯 Multi-Model Support
+- **Flexible Configuration**: Supports mainstream AI services like OpenAI, Claude, Deepseek, Qwen, etc.
+- **Proxy Services**: Built-in common proxy service presets with support for custom API endpoints
+- **Service Fallback**: Multi-service automatic switching ensures functionality stability
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装方式
+### Installation Methods
 
-#### 方式一：手动安装（推荐）
-1. 从 [Releases](https://github.com/laurence-Chan/smart-knowledge/releases) 下载最新版本
-2. 解压文件到 `[你的库]/.obsidian/plugins/smart-knowledge/` 目录
-3. 在 Obsidian 设置中启用 "Smart Knowledge" 插件
+#### Method 1: Manual Installation (Recommended)
+1. Download the latest version from [Releases](https://github.com/laurence-chan/smart-knowledge/releases)
+2. Extract files to `[your-vault]/.obsidian/plugins/smart-knowledge/` directory
+3. Enable "Smart Knowledge" plugin in Obsidian settings
 
-#### 方式二：开发者安装
+#### Method 2: Developer Installation
 ```bash
-# 克隆代码到插件目录
-git clone https://github.com/laurence-Chan/smart-knowledge.git
+# Clone code to plugin directory
+git clone https://github.com/laurence-chan/smart-knowledge.git
 cd smart-knowledge
 npm install
 npm run build
 
-# 将构建文件复制到 Obsidian 插件目录
+# Copy build files to Obsidian plugin directory
 cp main.js manifest.json styles.css /path/to/your/vault/.obsidian/plugins/smart-knowledge/
 ```
 
-### 基础配置
+### Basic Configuration
 
-1. **打开插件设置**
-   - 进入 Obsidian 设置 → Smart Knowledge
+1. **Open Plugin Settings**
+   - Go to Obsidian Settings → Smart Knowledge
 
-2. **配置嵌入服务**
-   - 选择嵌入模型提供商（推荐 Qwen）
-   - 填入对应的 API 密钥
-   - 推荐模型：`text-embedding-v4`
+2. **Configure Embedding Service** (Required)
+   - Select embedding model provider 
+   - Enter corresponding API key
 
-3. **配置对话服务**
-   - 选择对话模型提供商
-   - 填入对应的 API 密钥
+3. **Configure Chat Service** (Optional)
+   - Select chat model provider
+   - Enter corresponding API key
 
-4. **初始化知识库**
-   - 使用命令面板搜索："Smart Knowledge: 初始化知识库索引"
-   - 等待索引完成（状态栏会显示进度）
+4. **Initialize Knowledge Base**
+   - Use command palette search: "Smart Knowledge: Initialize Knowledge Base Index"
+   - Wait for indexing completion (status bar will show progress)
 
-## 🎮 使用指南
+## 🎮 Usage Guide
 
-### 命令面板功能
-- `Smart Knowledge: 初始化知识库索引` - 为所有笔记生成向量索引
-- `Smart Knowledge: 智能搜索笔记` - 打开语义搜索弹窗
-- `Smart Knowledge: 打开 AI 智能对话面板` - 在侧边栏打开 AI 问答视图
-- `Smart Knowledge: 查看知识库状态` - 检查索引状态和服务配置
-- `Smart Knowledge: 重建知识库索引` - 清空并重建所有向量索引
+### Command Palette Functions
+- `Smart Knowledge: Initialize Knowledge Base Index` - Generate vector indexes for all notes
+- `Smart Knowledge: Smart Search Notes` - Open semantic search modal
+- `Smart Knowledge: Open AI Chat Panel` - Open AI Q&A view in sidebar
+- `Smart Knowledge: View Knowledge Base Status` - Check index status and service configuration
+- `Smart Knowledge: Rebuild Knowledge Base Index` - Clear and rebuild all vector indexes
 
-### 界面元素
+### Interface Elements
 
-#### 状态栏指示器
-- 🧠 `数字` - 显示已索引的向量数量，点击查看详细状态
-- ⚠️ 警告图标 - 表示需要配置 API 或重新索引
+#### Status Bar Indicator
+- 🧠 `number` - Shows number of indexed vectors, click to view detailed status
+- ⚠️ Warning icon - Indicates need for API configuration or re-indexing
 
-#### 侧边栏视图
-- **推荐视图**：自动根据当前笔记显示相关推荐
-- **AI 对话视图**：持续的 AI 助手对话界面
+#### Sidebar Views
+- **Recommendation View**: Automatically shows related recommendations based on current note
+- **AI Chat View**: Continuous AI assistant conversation interface
 
-#### 搜索功能
-- 在搜索框中输入自然语言描述
-- 支持模糊匹配和语义理解
-- 显示相似度评分和预览内容
+#### Search Features
+- Enter natural language descriptions in search box
+- Supports fuzzy matching and semantic understanding
+- Shows similarity scores and preview content
 
-## ⚙️ 高级配置
+## ⚙️ Advanced Configuration
 
-### 代理服务设置
-插件内置了多个代理服务预设：
-- **API2D**：国内访问友好的代理服务
-- **CloseAI**：高稳定性代理服务
-- **AI小镇**：多模型支持的代理平台
-- **自定义**：配置你自己的代理端点
+### Proxy Service Settings
+Plugin includes multiple proxy service presets:
+- **API2D**: China-friendly proxy service
+- **CloseAI**: High-stability proxy service
+- **AI Town**: Multi-model support proxy platform
+- **Custom**: Configure your own proxy endpoints
 
-### 性能优化
-- **推荐数量**：控制每次显示的推荐笔记数量（默认 5 个）
-- **相似度阈值**：设置推荐的最低相似度要求（默认 0.4）
-- **增强搜索**：启用智能缓存和结果优化（推荐开启）
+### Performance Optimization
+- **Recommendation Count**: Control number of recommended notes displayed each time (default 5)
+- **Similarity Threshold**: Set minimum similarity requirement for recommendations (default 0.4)
+- **Enhanced Search**: Enable smart caching and result optimization (recommended enabled)
 
-### 文件处理
-- **自动同步**：文件修改后自动更新向量索引
-- **智能分块**：长文档自动分割，确保嵌入质量
-- **格式支持**：完整支持 Markdown 语法和元数据
+### File Processing
+- **Auto Sync**: Automatically update vector indexes after file modifications
+- **Smart Chunking**: Long documents automatically split to ensure embedding quality
+- **Format Support**: Full support for Markdown syntax and metadata
 
-## 🔒 隐私和安全
+## 🔒 Privacy and Security
 
-- **本地存储**：所有 API 密钥仅存储在本地库中
-- **数据处理**：向量数据本地缓存，减少重复 API 调用
-- **加密保护**：敏感配置信息经过加密存储
-- **网络安全**：支持自定义代理，确保数据传输安全
+- **Local Storage**: All API keys stored only in local vault
+- **Data Processing**: Vector data cached locally to reduce duplicate API calls
+- **Encryption Protection**: Sensitive configuration information encrypted storage
+- **Network Security**: Supports custom proxies to ensure secure data transmission
 
-## 📊 系统要求
+## 📊 System Requirements
 
-- **Obsidian 版本**：0.15.0 或更高
-- **网络连接**：需要访问配置的 AI 服务 API
-- **存储空间**：向量索引文件占用少量磁盘空间
-- **内存使用**：根据库大小动态调整，通常占用较少内存
+- **Obsidian Version**: 0.15.0 or higher
+- **Network Connection**: Requires access to configured AI service APIs
+- **Storage Space**: Vector index files occupy minimal disk space
+- **Memory Usage**: Dynamically adjusts based on vault size, typically uses minimal memory
 
-## 🔧 故障排除
+## 🔧 Troubleshooting
 
-### 常见问题
+### Common Issues
 
-**Q: 状态栏显示"需配置 API"**
-A: 检查插件设置中的 API 密钥是否正确填写，保存设置后重启插件。
+**Q: Status bar shows "API Configuration Required"**
+A: Check if API keys in plugin settings are correctly filled, save settings and restart plugin.
 
-**Q: 搜索结果不准确或没有结果**
-A: 确认已完成知识库索引，尝试重建索引或调整相似度阈值。
+**Q: Search results inaccurate or no results**
+A: Confirm knowledge base indexing is complete, try rebuilding index or adjusting similarity threshold.
 
-**Q: API 调用失败或超时**
-A: 检查网络连接和 API 密钥，考虑使用代理服务或切换服务提供商。
+**Q: API call failures or timeouts**
+A: Check network connection and API keys, consider using proxy services or switching service providers.
 
-**Q: 向量维度不匹配错误**
-A: 表示更换了嵌入模型，需要执行"重建知识库索引"重新生成向量。
+**Q: Vector dimension mismatch error**
+A: Indicates embedding model was changed, need to execute "Rebuild Knowledge Base Index" to regenerate vectors.
 
-### 调试信息
-- 开启 Obsidian 开发者工具查看控制台日志
-- 在插件设置中查看详细的服务状态信息
-- 使用"查看知识库状态"命令检查系统健康度
+### Debug Information
+- Enable Obsidian developer tools to view console logs
+- View detailed service status information in plugin settings
+- Use "View Knowledge Base Status" command to check system health
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-### 开发环境设置
+### Development Environment Setup
 ```bash
-git clone https://github.com/laurence-Chan/smart-knowledge.git
+git clone https://github.com/laurence-chan/smart-knowledge.git
 cd smart-knowledge
 npm install
-npm run dev  # 启动开发模式
+npm run dev  # Start development mode
 ```
 
-### 构建和测试
+### Build and Testing
 ```bash
-npm run build     # 生产构建
-npm run version   # 版本管理
+npm run build     # Production build
+npm run version   # Version management
 ```
 
-## 📄 开源协议
+## 📄 License
 
-本项目采用 [MIT](./LICENSE) 开源协议。
+This project is licensed under the [MIT](./LICENSE) license.
 
 ---
 
-**让你的知识库更智能，让知识发现更高效！** 🧠✨
+**Make your knowledge base smarter, make knowledge discovery more efficient!** 🧠✨
